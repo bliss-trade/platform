@@ -176,36 +176,49 @@
             text-align: center;
             color: var(--accent);
         }
-        .video-block {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .stats-block {
+            background: linear-gradient(135deg, var(--primary-dark), #1e0d33);
+            padding: 60px 20px;
         }
-        .video-container {
-            max-width: 900px;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 2px solid rgba(255,255,255,0.1);
         }
-        .video-placeholder {
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-            background: linear-gradient(45deg, #1a1a2e, #16213e);
-            color: var(--text-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            position: relative;
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-top: 4px solid var(--accent);
         }
-        .video-placeholder::before {
-            content: '▶';
-            position: absolute;
-            font-size: 3rem;
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--accent);
-            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .stats-description {
+            max-width: 800px;
+            margin: 50px auto 0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
         }
         @media (min-width: 768px) {
             h1 {
@@ -223,6 +236,23 @@
             .advantage-item {
                 font-size: 1.3rem;
                 padding: 25px;
+            }
+        }
+        @media (max-width: 768px) {
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .stat-card {
+                padding: 20px;
+            }
+            .stat-value {
+                font-size: 2rem;
             }
         }
     </style>
@@ -250,7 +280,7 @@
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <div class="step-text">Вы получаете процент с оборота (от 10% до 15% в зависимости от объема)</div>
+                    <div class="step-text">Вы получаете процент с оборота (до 15% в зависимости от объема)</div>
                 </div>
             </div>
             <div class="btn-container">
@@ -276,6 +306,14 @@
                     <div>Доход до 15% с оборота (чем больше объем - тем выше процент)</div>
                 </div>
                 <div class="advantage-item">
+                    <div class="advantage-icon">⚡</div>
+                    <div>Быстрое подключение без KYC и холдового депозита</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <div>Рабочий депозит от 500 USDT</div>
+                </div>
+                <div class="advantage-item">
                     <div class="advantage-icon">🏦</div>
                     <div>Работа с любыми банками и платежными системами</div>
                 </div>
@@ -294,13 +332,26 @@
         </div>
     </div>
 
-    <div class="section-block video-block">
+    <div class="section-block stats-block">
         <div class="container">
-            <h2 class="section-title">Пример работы на платформе</h2>
-            <div class="video-container">
-                <div class="video-placeholder">
-                    Видео демонстрации работы платформы
+            <h2 class="section-title">Статистика по депозитам в СНГ</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">$5M+</div>
+                    <div class="stat-label">Депозитов в день</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-value">$150M+</div>
+                    <div class="stat-label">Депозитов в месяц</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$1.8B+</div>
+                    <div class="stat-label">Депозитов в год</div>
+                </div>
+            </div>
+            <div class="stats-description">
+                <p>Рынок онлайн-гемблинга в СНГ растет на <span class="highlight">25-30% ежегодно</span>, при этом количество трейдеров для обработки платежей отстает от спроса. По прогнозам, в ближайшие 5 лет это станет <span class="highlight">самой прибыльной работой</span> в финансовом секторе с минимальными требованиями к старту.</p>
+                <p>Количество лудоманов увеличивается на <span class="highlight">15-20% каждый год</span>, создавая постоянный спрос на услуги процессинга. Уже сегодня не хватает около <span class="highlight">40,000 трейдеров</span> для покрытия текущего объема операций.</p>
             </div>
             <div class="btn-container">
                 <a href="https://bliss-trade.github.io/contacts/" class="btn">Начать сейчас</a>
