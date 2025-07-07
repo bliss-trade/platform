@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bliss Trade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header-block {
+            background-color: rgb(116, 94, 255);
+            color: white;
+            padding: 60px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .header-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .header-image {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .white-block {
+            background: white;
+            padding: 60px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #333;
+            font-weight: 700;
+        }
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .feature {
+            width: 45%;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .feature-image {
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: rgb(116, 94, 255);
+            font-weight: 700;
+            text-align: center;
+        }
+        .feature-text {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: #ffcc00;
+            color: #333;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+        .btn:hover {
+            background-color: #ffd633;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-content {
+                margin-bottom: 40px;
+            }
+            .header-image {
+                width: 100%;
+                max-width: 400px;
+            }
+            .feature {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .header-description {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-block">
+        <div class="container">
+            <div class="header-content">
+                <h1>Закрытая платформа нового поколения для P2P трейдеров и команд</h1>
+                <p class="header-description">Наша цель - создать сильный коллектив на рынке, готов присоединиться?</p>
+                <div class="btn-container">
+                    <a href="https://bliss-trade.github.io" class="btn">Оставить заявку</a>
+                </div>
+            </div>
+            <img src="https://i.postimg.cc/MGsmMJwx/8.png" alt="Bliss Trade" class="header-image">
+        </div>
+    </div>
+    
+    <div class="white-block">
+        <div class="container">
+            <h2 class="section-title">BLISS - это доступ к проверенным источникам трафика для трейдеров, всегда конкурентный PAY-IN и PAY-OUT, и несравненное рабочее окружение платформы</h2>
+            
+            <div class="features-container">
+                <div class="feature">
+                    <img src="https://i.postimg.cc/vBhF6BBT/photo-2025-07-06-23-56-52.jpg" alt="Надежность и стабильность" class="feature-image">
+                    <h3 class="feature-title">Надежность и стабильность</h3>
+                    <p class="feature-text">
+                        Постоянная работа нашей площадки обеспечивается широкими возможностями наших крупных партнеров в сфере iGaming, чистый трафик позволяет трейдерам сфокусироваться на действительно важных вещах.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <img src="https://i.postimg.cc/fLDQLXM1/photo-2025-07-06-23-57-03.jpg" alt="Интуитивный интерфейс" class="feature-image">
+                    <h3 class="feature-title">Интуитивный интерфейс</h3>
+                    <p class="feature-text">
+                        Собственное цифровое решение предлагает нативно-понятный интерфейс, что делает работу в системе простой и удобной для трейдеров и команд разного уровня и опыта.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <img src="https://i.postimg.cc/DzqKn53q/photo-2025-07-06-23-57-08.jpg" alt="Поддержка любого объема трафика" class="feature-image">
+                    <h3 class="feature-title">Поддержка любого объема трафика</h3>
+                    <p class="feature-text">
+                        Широкие возможности для разных направлений и реквизитов. Платформа дает возможность к масштабированию как небольшим группам трейдеров, так и крупным командам на рынке.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <img src="https://i.postimg.cc/wBKdCZZq/photo-2025-07-06-23-57-13.jpg" alt="Гибкость настроек" class="feature-image">
+                    <h3 class="feature-title">Гибкость настроек</h3>
+                    <p class="feature-text">
+                        Каждый трейдер может настроить платформу под свои потребности, обеспечивая индивидуальный подход и максимальную эффективность работы в рамках сессии.
+                    </p>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://bliss-trade.github.io" class="btn">Оставить заявку</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
