@@ -3,145 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bliss Trade</title>
+    <title>Bliss Trade | Платформа для P2P трейдеров</title>
     <style>
+        :root {
+            --primary-dark: #2a0845;
+            --primary: #4e1d7d;
+            --primary-light: #6441a5;
+            --accent: #ff9d00;
+            --accent-hover: #ffb733;
+            --text-light: #f8f9fa;
+            --text-gray: #e0e0e0;
+            --card-bg: #1a1a2e;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
             line-height: 1.6;
         }
         .header-block {
-            background-color: rgb(116, 94, 255);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--text-light);
             padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-block::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent), #ff6b00);
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-content {
-            max-width: 600px;
+            position: relative;
+            z-index: 1;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         .header-description {
             font-size: 1.2rem;
-            line-height: 1.6;
             margin-bottom: 30px;
-        }
-        .header-image {
-            width: 400px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .white-block {
-            background: white;
-            padding: 60px 20px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #333;
-            font-weight: 700;
-        }
-        .features-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .feature {
-            width: 45%;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .feature-image {
-            width: 100%;
-            max-width: 400px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: rgb(116, 94, 255);
-            font-weight: 700;
-            text-align: center;
-        }
-        .feature-text {
-            line-height: 1.6;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        .btn-container {
-            text-align: center;
-            margin-top: 30px;
+            color: var(--text-gray);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn {
             display: inline-block;
             padding: 15px 35px;
-            background-color: #ffcc00;
-            color: #333;
+            background: linear-gradient(to right, var(--accent), #ff6b00);
+            color: #1a1a1a;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
             border: none;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 157, 0, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 800;
+            margin: 10px 0;
+            position: relative;
+            overflow: hidden;
         }
         .btn:hover {
-            background-color: #ffd633;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 157, 0, 0.4);
+            background: linear-gradient(to right, var(--accent-hover), #ff8c00);
         }
-        @media (max-width: 992px) {
-            .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-content {
-                margin-bottom: 40px;
-            }
-            .header-image {
-                width: 100%;
-                max-width: 400px;
-            }
-            .feature {
-                width: 100%;
-            }
+        .btn:active {
+            transform: translateY(1px);
         }
-        @media (max-width: 768px) {
+        .section-block {
+            padding: 60px 20px;
+        }
+        .process-block {
+            background-color: var(--primary);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-light);
+            font-weight: 700;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #ff6b00);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .process-step {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 100%;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-right: 25px;
+            min-width: 40px;
+            text-align: center;
+        }
+        .step-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .advantages-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            padding: 20px;
+            border-radius: 10px;
+            background: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .advantage-item:hover {
+            transform: translateX(10px);
+        }
+        .advantage-icon {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            width: 40px;
+            text-align: center;
+            color: var(--accent);
+        }
+        .video-block {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .video-placeholder {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        .video-placeholder::before {
+            content: '▶';
+            position: absolute;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+        @media (min-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.8rem;
             }
             .header-description {
-                font-size: 1rem;
+                font-size: 1.3rem;
+            }
+            .process-steps {
+                gap: 30px;
             }
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2.3rem;
+            }
+            .advantage-item {
+                font-size: 1.3rem;
+                padding: 25px;
             }
         }
     </style>
@@ -149,57 +230,80 @@
 <body>
     <div class="header-block">
         <div class="container">
-            <div class="header-content">
-                <h1>Закрытая платформа нового поколения для P2P трейдеров и команд</h1>
-                <p class="header-description">Наша цель - создать сильный коллектив на рынке, готов присоединиться?</p>
-                <div class="btn-container">
-                    <a href="https://bliss-trade.github.io" class="btn">Оставить заявку</a>
-                </div>
-            </div>
-            <img src="https://i.postimg.cc/MGsmMJwx/8.png" alt="Bliss Trade" class="header-image">
+            <h1>Зарабатывай на депозитах игроков — обрабатывай переводы и получай прибыль</h1>
+            <p class="header-description">Закрытая платформа для владельцев карт и трейдеров, готовых зарабатывать на входящих переводах с казино и ставок</p>
+            <a href="https://bliss-trade.github.io/survey" class="btn">Начать сейчас</a>
         </div>
     </div>
     
-    <div class="white-block">
+    <div class="section-block process-block">
         <div class="container">
-            <h2 class="section-title">BLISS - это доступ к проверенным источникам трафика для трейдеров, всегда конкурентный PAY-IN и PAY-OUT, и несравненное рабочее окружение платформы</h2>
-            
-            <div class="features-container">
-                <div class="feature">
-                    <img src="https://i.postimg.cc/vBhF6BBT/photo-2025-07-06-23-56-52.jpg" alt="Надежность и стабильность" class="feature-image">
-                    <h3 class="feature-title">Надежность и стабильность</h3>
-                    <p class="feature-text">
-                        Постоянная работа нашей площадки обеспечивается широкими возможностями наших крупных партнеров в сфере iGaming, чистый трафик позволяет трейдерам сфокусироваться на действительно важных вещах.
-                    </p>
+            <h2 class="section-title">Как работает процессинг?</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Пользователь вносит депозит → деньги поступают на вашу карту мгновенно</div>
                 </div>
-                
-                <div class="feature">
-                    <img src="https://i.postimg.cc/fLDQLXM1/photo-2025-07-06-23-57-03.jpg" alt="Интуитивный интерфейс" class="feature-image">
-                    <h3 class="feature-title">Интуитивный интерфейс</h3>
-                    <p class="feature-text">
-                        Собственное цифровое решение предлагает нативно-понятный интерфейс, что делает работу в системе простой и удобной для трейдеров и команд разного уровня и опыта.
-                    </p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">С вашего баланса автоматически списываются USDT по выгодному курсу</div>
                 </div>
-                
-                <div class="feature">
-                    <img src="https://i.postimg.cc/DzqKn53q/photo-2025-07-06-23-57-08.jpg" alt="Поддержка любого объема трафика" class="feature-image">
-                    <h3 class="feature-title">Поддержка любого объема трафика</h3>
-                    <p class="feature-text">
-                        Широкие возможности для разных направлений и реквизитов. Платформа дает возможность к масштабированию как небольшим группам трейдеров, так и крупным командам на рынке.
-                    </p>
-                </div>
-                
-                <div class="feature">
-                    <img src="https://i.postimg.cc/wBKdCZZq/photo-2025-07-06-23-57-13.jpg" alt="Гибкость настроек" class="feature-image">
-                    <h3 class="feature-title">Гибкость настроек</h3>
-                    <p class="feature-text">
-                        Каждый трейдер может настроить платформу под свои потребности, обеспечивая индивидуальный подход и максимальную эффективность работы в рамках сессии.
-                    </p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Вы получаете процент с оборота (от 10% до 15% в зависимости от объема)</div>
                 </div>
             </div>
-
             <div class="btn-container">
-                <a href="https://bliss-trade.github.io" class="btn">Оставить заявку</a>
+                <a href="https://bliss-trade.github.io/survey" class="btn">Пройти анкету</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section-block">
+        <div class="container">
+            <h2 class="section-title">Преимущества платформы</h2>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-icon">🔐</div>
+                    <div>Надёжная верификация всех транзакций</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💸</div>
+                    <div>Мгновенные выплаты без задержек</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">📈</div>
+                    <div>Доход до 15% с оборота (чем больше объем - тем выше процент)</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🏦</div>
+                    <div>Работа с любыми банками и платежными системами</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🎰</div>
+                    <div>Надежный трафик только с казино и ставок</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🤝</div>
+                    <div>Персональная поддержка 24/7 и обучение для новичков</div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <a href="https://bliss-trade.github.io/survey" class="btn">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block video-block">
+        <div class="container">
+            <h2 class="section-title">Пример работы на платформе</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    Видео демонстрации работы платформы
+                </div>
+            </div>
+            <div class="btn-container">
+                <a href="https://bliss-trade.github.io/survey" class="btn">Начать сейчас</a>
             </div>
         </div>
     </div>
